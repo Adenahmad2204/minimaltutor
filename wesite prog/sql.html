@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+    <title>MYSQL</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body bgcolor="#f3f4ed">
+     
+
+    <center>
+        <h1 style="color: orange;">MYSQL</h1>
+        
+    </center>   
+
+    <P class="kalimat">MySQL adalah Relational Database Management System (RDBMS) digunakan untuk mengolah data terstruktur. MySQL merupakan salah satu database yang paling banyak digunakan saat ini.</p>
+    <p class="kalimat">Database merupakan elemen penting dalam aplikasi karena mampu menyimpan data. Data yang tersimpan dapat digunakan kembali untuk berbagai kepentingan seperti ditampilkan, diagregasi, diolah dan sebagainya.</p>
+    <p class="kalimat">MySQL mampu menyimpan banyak database. Setiap database tersusun oleh table dan setiap table terdiri dari kolom (field) dan baris data (row)</p>
+    <img src="https://ngodingdata.com/wp-content/uploads/2019/10/tabledatabase.png" alt="" class="img" width="500px">
+    <p class="kalimat">Hubungan antara Database, Table, Field dan Record</p>
+    <p class="kalimat">MySQL sudah terdapat dalam paket XAMPP dan siap digunakan setelah instalasi XAMPP sudah dilakukan.</p>
+
+        <h3 style="color: orange;" class="Jphp">Cara menjalankan service MySQL</h3>
+    <p class="kalimat"> Note : Pastikan anda sudah <strong><a href="https://ngodingdata.com/install-xampp-di-windows-dan-linux/">menginstall XAMPP</a></strong></p>
+    <p class="kalimat"><strong>Di Windows,</strong> Buka XAMPP control panel dan tekan tombol Apache dan MySQL</p>    
+    <img src="https://ngodingdata.com/wp-content/uploads/2019/10/image-26.png" alt="" class="img" width="500px">   
+    <p class="kalimat"><strong>  Di Linux,</strong> ketik <strong>sudo /opt/lampp/lampp start</strong></p>   
+
+    <pre class="language-markup">
+        <code>
+            $ sudo /opt/lampp/lampp start
+            Starting XAMPP for Linux 7.1.26-1…
+            XAMPP: Starting Apache…ok.
+            XAMPP: Starting MySQL…ok.
+            XAMPP: Starting ProFTPD…ok.
+            
+                
+        </code>
+    </pre>
+
+    <p class="kalimat">Buka browser dan ketik</p>
+
+    <pre class="language-markup">
+        <code>     
+        
+            http://localhost/phpmyadmin/ 
+           
+        </code>
+    </pre>
+    <p class="kalimat"><strong> phpmyadmin</strong> adalah client interface untuk mengolah data di MySQL. phpmyadmin memudahkan dalam mengolah database dengan GUI dan tidak harus berurusan dengan kode secara langsung</p>
+    <img src="https://ngodingdata.com/wp-content/uploads/2019/10/image-28.png" alt="" class="img" width="500px">
+    <p class="kalimat">Halaman Utama Phpmyadmin</p>
+    <p class="kalimat">MySQL menggunakan bahasa SQL (Structured Query Language) untuk melakukan operasi data seperti menambah, merubah, menghapus dan sebagainya.</p>
+    <p class="kalimat">Untuk menggunakan perintah SQL di phpmyadmin dapat menggunakan interface phpmyadmin atau menggunakan kode SQL yang dapat dieksekusi di Menu Tab SQL</p>
+    <img src="https://ngodingdata.com/wp-content/uploads/2019/10/image-29.png" alt="" class="img" width="500px">
+    <p class="kalimat">Halaman SQL di phpmyadmin untuk query data</p>
+    <p class="kalimat">Selain bisa mengakes MySQL melalui phpmyadmin kita juga bisa mengakses melalui terminal / command prompt.</p>
+        <h3 style="color: orange;" class="Jphp">Di Linux, Masuk ke directory /opt/lampp/bin</h3>
+
+        <pre class="language-markup">
+            <code>
+                cd /opt/lampp/bin/
+            </code>
+        </pre>
+    <p class="kalimat">Masuk ke MySQL / MariaDB dengan akses root</p>
+    <pre class="language-markup">
+        <code>
+               $ ./mysql -u root
+                Welcome to the MariaDB monitor.  Commands end with ; or \g.
+                Your MariaDB connection id is 161
+                Server version: 10.1.38-MariaDB Source distribution
+                Copyright (c) 2000, 2018, Oracle, MariaDB Corporation Ab and others.
+                Type 'help;' or '\h' for help. Type '\c' to clear the current input statement.
+                MariaDB [(none)]>
+        </code>
+    </pre>
+    <p class="kalimat">Untuk melihat seluruh database di MySQL</p>
+    <pre class="language-markup">
+        <code>
+            MariaDB [(none)]> show databases;
+                +----------------------------+
+                | Database                   |
+                +----------------------------+
+                | dts                        |
+                | information_schema         |
+                | inmul                      |
+                | iot_itb                    |
+                | iot_rest                   |
+                | mysql                      |
+                | ngodingbareng               |
+                | performance_schema         |
+                | phpmyadmin                 |
+                | repo                       |
+                | test                       |
+                | test_db_login              |
+                | test_ecommerce_codeigniter |
+                | toko_mainan                |
+                +----------------------------+
+                14 rows in set (0.01 sec)
+        </code>
+    </pre>     
+     <h3 style="color: orange;" class="Jphp">Di Windows, Masuk ke directory c:/xampp</h3>
+    <pre class="language-markup">
+        <code>
+            cd c:\xampp\mysql\bin 
+            mysql.exe -u root
+        </code>
+    </pre>
+    <p class="kalimat">Dalam SQL terdapat 5 istilah perintah untuk manipulasi data yaitu:</p>
+    <pre class="language-markup">
+        <code>
+            1.Data Definition Language (DDL)
+            2.Data Manipulation Language (DML)
+            3.Data Query Language (DQL)
+            4.Data Control Language (DCL)
+            5.Transaction Control Language (TCL)
+        </code>
+    </pre>
+    <h3 style="color: orange;" class="Jphp">DDL, DML, DQL, DCL, TCL</h3>
+    <p class="kalimat"><i>Data Definition Language</i>(DDL) adalah perintah SQL untuk membuat, merubah atau menghapus struktur database</p>
+    <p class="kalimat"><i>Data Query Language </i>(DQL) adalah perintah SQL untuk query data</p>
+    <p class="kalimat"><i>Data Control Language </i>(DCL) adalah perintah SQL untuk kontrol dan permission database</p>
+    <p class="kalimat"><i>Transaction Control Language </i>(TCL) adalah perintah SQL yang berhubungan dengan transaksi di database</p>
+    
+
+    
+<footer>
+    <div class="bawah">
+         <a href="index.html">Kembali</a>
+         <p><a href="sql.html">kembali ke atas</a></p>
+        <small>copyright &copy; 2021-ADEN RIMBA. All Rights Reserved</small>
+       
+    </div>
+</footer>
+
+
+</body>
+</html>
